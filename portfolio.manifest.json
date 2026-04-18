@@ -1,6 +1,6 @@
 {
-  "username": "your-username",
-  "deployPath": "/your-username/",
-  "siteTitle": "Your Portfolio",
+  "username": "niko",
+  "deployPath": "/niko/",
+  "siteTitle": "Niko Jekkonen | CV",
   "outputDir": "dist"
 }

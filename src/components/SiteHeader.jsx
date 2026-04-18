@@ -1,10 +1,13 @@
-function SiteHeader({ navItems, siteTitle }) {
+function SiteHeader({ navItems, siteTitle, role, resumePdf }) {
   return (
     <header className="site-header">
       <div className="layout-shell site-header__inner">
         <a className="site-header__brand" href="#top">
-          <span className="site-header__brand-mark">SF</span>
-          <span>{siteTitle}</span>
+          <span className="site-header__brand-mark">NJ</span>
+          <span className="site-header__brand-copy">
+            <strong>{siteTitle}</strong>
+            <small>{role}</small>
+          </span>
         </a>
 
         <nav aria-label="Primary navigation">
@@ -16,6 +19,15 @@ function SiteHeader({ navItems, siteTitle }) {
             ))}
           </ul>
         </nav>
+
+        <a
+          className="site-header__cta"
+          href={resumePdf}
+          rel="noreferrer"
+          target="_blank"
+        >
+          Download CV
+        </a>
       </div>
     </header>
   );

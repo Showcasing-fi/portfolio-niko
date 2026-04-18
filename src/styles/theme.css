@@ -1,13 +1,17 @@
 :root {
-  --layout-width: 72rem;
-  --color-text: #18302b;
-  --color-muted: #50635d;
-  --color-accent: #0f766e;
-  --color-border: rgba(24, 48, 43, 0.12);
-  --color-border-strong: rgba(24, 48, 43, 0.2);
-  --color-surface: rgba(255, 252, 248, 0.82);
-  --color-surface-strong: rgba(255, 255, 255, 0.92);
-  --shadow-soft: 0 20px 60px rgba(24, 48, 43, 0.08);
-  --font-body: "Aptos", "Trebuchet MS", sans-serif;
-  --font-display: "Iowan Old Style", "Palatino Linotype", serif;
+  --layout-width: 92rem;
+  --color-page: #eef3f8;
+  --color-page-deep: #dfe6f0;
+  --color-sheet: rgba(252, 253, 255, 0.98);
+  --color-sidebar: #2e3b4c;
+  --color-sidebar-deep: #243243;
+  --color-text: #1f2933;
+  --color-muted: #5d6b7d;
+  --color-accent: #32465d;
+  --color-accent-soft: #dbe4ee;
+  --color-border: rgba(50, 70, 93, 0.12);
+  --color-border-strong: rgba(50, 70, 93, 0.2);
+  --shadow-soft: 0 32px 80px rgba(31, 41, 51, 0.14);
+  --font-body: "Aptos", "Segoe UI", sans-serif;
+  --font-display: "Aptos Display", "Segoe UI", sans-serif;
 }
