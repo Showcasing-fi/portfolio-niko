@@ -27,9 +27,9 @@ This manifest is the build and deployment contract for the repo:
 - `username` is the source of truth for the remote directory
 - `deployPath` must exactly match `/${username}/`
 - `outputDir` is shared by the Vite build and the deployment workflow
-- the workflow computes the FTP target as `/httpdocs/${username}/`
+- the workflow computes the FTP target as `/${username}/`
 
-For this repository, the expected deploy target is `/httpdocs/niko/`.
+For this repository, the expected deploy target is `/niko/`.
 
 ## Local development
 
@@ -86,15 +86,17 @@ Expected repository secrets:
 Deployment note:
 
 - the workflow uses FTPS by default
+- this repo assumes the FTP user is already rooted at `httpdocs`
 - the same host, username, and password can be reused across portfolio repos
-- each repo still deploys only to its computed `/httpdocs/<username>/` target
+- each repo still deploys only to its computed `/<username>/` target
+- for this repo, that means `/niko/`
 - if deployment issues continue, confirm FTPS and passive FTP support on the hosting side
 
 The deployment safety model remains intact:
 
 - `portfolio.manifest.json` must contain a real username
 - `deployPath` must exactly match `/${username}/`
-- the computed FTP target must be a valid `/httpdocs/<username>/` path
+- the computed FTP target must be a valid `/<username>/` path and must not resolve to `/`
 
 ## Subpath behavior
 
