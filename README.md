@@ -9,7 +9,7 @@ The site stays intentionally simple:
 - no backend
 - no database
 - no authentication
-- deployment handled by GitHub Actions over FTP
+- deployment handled by GitHub Actions over FTPS
 
 ## Current manifest
 
@@ -74,7 +74,7 @@ The workflow:
 - validates `portfolio.manifest.json`
 - installs dependencies with `npm ci`
 - runs `npm run build`
-- computes the remote FTP directory from `username`
+- computes the remote deploy directory from `username`
 - deploys only the build output folder
 
 Expected repository secrets:
@@ -82,6 +82,13 @@ Expected repository secrets:
 - `FTP_HOST`
 - `FTP_USERNAME`
 - `FTP_PASSWORD`
+
+Deployment note:
+
+- the workflow uses FTPS by default
+- the same host, username, and password can be reused across portfolio repos
+- each repo still deploys only to its computed `/httpdocs/<username>/` target
+- if deployment issues continue, confirm FTPS and passive FTP support on the hosting side
 
 The deployment safety model remains intact:
 

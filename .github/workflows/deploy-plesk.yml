@@ -36,12 +36,13 @@ jobs:
       - name: Build static site
         run: npm run build
 
-      - name: Deploy build output over FTP
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+      - name: Deploy build output over FTPS
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.6
         with:
           server: ${{ secrets.FTP_HOST }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
+          protocol: ftps
           server-dir: ${{ steps.manifest.outputs.remote_dir }}
           local-dir: ./${{ steps.manifest.outputs.output_dir }}/
 
