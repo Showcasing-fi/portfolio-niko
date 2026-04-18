@@ -79,7 +79,7 @@ export function resolvePortfolioManifest(options = {}) {
 
   const siteTitle = requireNonEmptyString(manifest.siteTitle, 'siteTitle');
   const outputDir = normalizeOutputDir(manifest.outputDir);
-  const remoteDir = `/httpdocs/${username}/`;
+  const remoteDir = `/${username}/`;
 
   if (remoteDir === '/httpdocs//' || !/^\/httpdocs\/[a-z0-9-]+\/$/.test(remoteDir)) {
     fail(`computed remote directory "${remoteDir}" is malformed.`);
